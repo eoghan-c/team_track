@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Three Peaks Climbing Challenge</title>
+	<script>
+		setInterval( function() { 
+	        var xmlhttp = new XMLHttpRequest();
+	        xmlhttp.onreadystatechange = function() {
+	            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+	                document.getElementById("running_totals").innerHTML = xmlhttp.responseText;
+	            }
+	        };
+	        xmlhttp.open("GET", "content.php", true);
+	        xmlhttp.send();
+	    }, 5000);
+	</script>
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			color: #333;
+		}
+		.intro, .brief_intro, .footer, .twitterfeed {
+			margin: .5em auto;
+			text-align: center;
+		}
+		#running_totals {
+			margin: 1em auto;
+		}
+		table#overall {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		table#overall td {
+			padding: 5px;
+		}
+		.height_remaining {
+			font-weight: bold;
+		}
+		table#leaderboard {
+			margin-top: 10px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		table#leaderboard td {
+			padding: 5px;
+		}
+		.separator {
+			width: 30%;
+		}
+		@media only screen and (max-device-width: 480px) {
+			body {
+				font-size: 400%;
+			}
+			#running_totals {
+				margin: 2em auto;
+			}
+			.intro, .twitterfeed {
+				display: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="intro">
+		<h1>Big Leap Charity climb - 14th May, 2016</h1>
+		<img src="Just-Giving.jpg" style="width: 500px">
+	</div>
+
+	<div class="brief_intro">
+		Follow us live as we attempt to 
+		<a href="https://www.justgiving.com/Big-Leap-Climbing">climb the height of the U.K.'s 3 peaks</a>
+		in 6 hours to raise funds for the Edinburgh Dog and Cat Home. Due to start climb at 12.30pm BST.
+	</div>
+
+	<div id="running_totals">
+		<table id="overall">
+			<tr>
+				<td><strong>Loading ...</strong></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="footer">
+		<p>
+			If you would like to sponsor us, please visit our Just Giving page, at:<br>
+			<a href="https://www.justgiving.com/Big-Leap-Climbing">www.justgiving.com/fundraising/Big-Leap-Climbing</a>
+		</p>
+		<p>
+			Thank you, from Heather, Hayley, Eoghan, Brian, Julie &amp; Rob.
+		</p>
+	</div>
+
+	<div class="twitterfeed">
+		            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/TheDickVet" data-widget-id="731402012974301184">Tweets by @TheDickVet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
+
+</body>
+
+</html> 
